@@ -1,0 +1,140 @@
+//Global Variables
+//Doors Access
+let doorImage1 = document.getElementById("door1");
+let doorImage2 = document.getElementById("door2");
+let doorImage3 = document.getElementById("door3");
+
+//Door Paths
+const botDoorPath = "<img src='./resources/girl-door.png'>";
+const beachDoorPath = "<img src='./resources/flower-door.png'>";
+const spaceDoorPath = "<img src='./resources/gift-door.png'>";
+const closedDoorPath = "<img src='./resources/shut-door.png'>";
+
+//Path sources
+const botDoorSrc = './resources/girl-door.png';
+const beachDoorSrc = './resources/flower-door.png';
+const spaceDoorSrc = './resources/gift-door.png';
+const closedDoorSrc = './resources/shut-door.png';
+
+//Doors variables
+let numClosedDoors = 3;
+let openDoor1 = '';
+let openDoor2 = '';
+let openDoor3 = '';
+
+
+const startButton = document.getElementById("start");
+
+let currentlyPlaying = true;
+//End Global Variables
+
+const isBot = (door) => {
+  if(door.src === botDoorPath) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//Is Clicked Function
+const isClicked = (door) => {
+  if(door.src === closedDoorPath) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+//Play Door Function
+const playDoor = (door) => {
+  numClosedDoors--;
+  if(numClosedDoors===0) {
+    gameOver('win');
+  } else if(isBot(door)) {
+    gameOver();
+  }
+};
+
+//Random Door Location Generator
+let randomChoreDoorGenerator = () => {
+  let theDoors = [botDoorPath, spaceDoorPath, beachDoorPath];
+  function shuffle(array) {
+    var m = array.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
+  };
+  shuffle(theDoors);
+  openDoor1 = theDoors[0];
+  openDoor2 = theDoors[1];
+  openDoor3 = theDoors[2];
+};
+
+//New Round Function
+const startRound = () => {
+  numClosedDoors = 3;
+  doorImage1.src = closedDoorPath;
+  doorImage1.innerHTML = closedDoorPath;
+  doorImage2.src = closedDoorPath;
+  doorImage2.innerHTML = closedDoorPath;
+  doorImage3.src = closedDoorPath;
+  doorImage3.innerHTML = closedDoorPath;
+  startButton.innerHTML = 'Good luck!'
+  currentlyPlaying = true;
+  startButton.style.backgroundColor = '#ff7c7c'
+  randomChoreDoorGenerator();
+}
+
+const gameOver = (status) => {
+  if(status === "win") {
+    startButton.innerHTML = 'You win! <i class="fas fa-heart instructions-icon"></i> Play again?';
+    startButton.style.backgroundColor = 'green'
+  } else {
+    startButton.innerHTML = 'Oh No! <i class="fas fa-heart-broken"></i> Play again?';
+    startButton.style.backgroundColor = 'red'
+  }
+  currentlyPlaying = false;
+}
+
+//Door Click Functions
+doorImage1.onclick = () => {
+  if(currentlyPlaying && (isClicked(doorImage1)===false)) {
+    doorImage1.src = openDoor1
+    doorImage1.innerHTML = doorImage1.src
+    playDoor(doorImage1);
+  }
+};
+doorImage2.onclick = () => {
+  if(currentlyPlaying && (isClicked(doorImage2)===false)) {
+    doorImage2.src = openDoor2
+    doorImage2.innerHTML = doorImage2.src
+    playDoor(doorImage2);
+  }
+};
+doorImage3.onclick = () => {
+  if(currentlyPlaying && (isClicked(doorImage3)===false)) { 
+    doorImage3.src = openDoor3
+    doorImage3.innerHTML = doorImage3.src
+    playDoor(doorImage3);
+  }
+};
+
+//Start Button Function
+startButton.onclick = () => {
+  if(!currentlyPlaying) {
+    startRound();
+  }
+};
+
+startRound();
