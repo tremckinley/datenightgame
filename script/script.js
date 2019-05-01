@@ -5,16 +5,10 @@ let doorImage2 = document.getElementById("door2");
 let doorImage3 = document.getElementById("door3");
 
 //Door Paths
-const botDoorPath = "<img src='./resources/girl-door.png'>";
-const beachDoorPath = "<img src='./resources/flower-door.png'>";
-const spaceDoorPath = "<img src='./resources/gift-door.png'>";
+const girlDoorPath = "<img src='./resources/girl-door.png'>";
+const flowerDoorPath = "<img src='./resources/flower-door.png'>";
+const ringDoorPath = "<img src='./resources/gift-door.png'>";
 const closedDoorPath = "<img src='./resources/shut-door.png'>";
-
-//Path sources
-const botDoorSrc = './resources/girl-door.png';
-const beachDoorSrc = './resources/flower-door.png';
-const spaceDoorSrc = './resources/gift-door.png';
-const closedDoorSrc = './resources/shut-door.png';
 
 //Doors variables
 let numClosedDoors = 3;
@@ -29,7 +23,7 @@ let currentlyPlaying = true;
 //End Global Variables
 
 const isBot = (door) => {
-  if(door.src === botDoorPath) {
+  if(door.src === girlDoorPath) {
     return true;
   } else {
     return false;
@@ -57,7 +51,7 @@ const playDoor = (door) => {
 
 //Random Door Location Generator
 let randomChoreDoorGenerator = () => {
-  let theDoors = [botDoorPath, spaceDoorPath, beachDoorPath];
+  let theDoors = [girlDoorPath, ringDoorPath, flowerDoorPath];
   function shuffle(array) {
     var m = array.length, t, i;
 
