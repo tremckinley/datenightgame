@@ -32,8 +32,8 @@ tr {
   width: fit-content;
   border-radius: 390px;
   background-color: rgba(255, 205, 205, 0.6);
-  padding: 50px;
-  margin: 30px auto 21px auto;
+  padding: 3rem 5rem;
+  margin: 3rem auto 3rem;
   box-shadow: 0px 7px 27px black;
 }
 
