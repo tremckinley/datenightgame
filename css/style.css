@@ -100,3 +100,36 @@ button img {
   height: 100%;
 }
 
+@media (max-width: 430px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title-row {
+    margin: 5rem 2rem 21px 2rem;
+
+  }
+  .instructions-title {
+    font-size: 5rem;
+  }
+
+  .instructions-text {
+    font-size: 40px;
+  }
+
+  .door-row {
+    margin-top: 10rem;
+  }
+
+  .door-frame {
+    height: 20rem;
+  }
+
+  .start-row {
+    height: 6rem;
+    width: 14rem;
+  }
+
+}
