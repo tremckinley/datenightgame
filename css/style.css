@@ -4,15 +4,14 @@ html{
 }
 body {
   background-image: linear-gradient(grey, black);
-  height: 100%;
-  display: flex column;
+  height: fit-content;
   align-items: center;
 }
 
 tr {
   display: flex;
   align-items: center;
-  margin: 30px 0px
+  margin: 10px 0px
 }
 .header{
   background-color: darkorange;
@@ -75,7 +74,7 @@ tr {
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   padding: 5px;
-  font-size: 40px;
+  font-size: 20px;
   color: darkslategray;
 }
 
@@ -151,9 +150,9 @@ button img {
   background-color: rgb(80, 92, 104);;
 }
 
-/*@media screen and (max-width: 420px) {
+@media screen and (max-width: 420px) {
   .instructions-text {
-    font-size: 20px;
+    font-size: 40px;
   }
 
   tr {
@@ -164,4 +163,3 @@ button img {
     margin-top: 500px
   }
 }
-  */
