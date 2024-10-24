@@ -110,9 +110,13 @@ const startRound = () => {
 
 const gameOver = (status) => {
   if(status === "win") {
+    instructionBar.style.display = "none";
+    showButton.style.display = "flex";
     startButton.innerHTML = 'You win! <i class="fa-solid fa-face-smile-wink gameovericon"></i> Play again?';
     startButton.style.backgroundColor = 'deepskyblue'
   } else {
+    instructionBar.style.display = "none";
+    showButton.style.display = "flex";
     startButton.innerHTML = 'Oh No! <i class="fas fa-skull gameovericon"></i> Play again?';
     startButton.style.backgroundColor = 'red'
   }
