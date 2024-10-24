@@ -4,10 +4,10 @@ let doorImage1 = document.getElementById("door1");
 let doorImage2 = document.getElementById("door2");
 let doorImage3 = document.getElementById("door3");
 
-//Door Paths
-const girlDoorPath = "<img src='./resources/girl-door.png'>";
-const flowerDoorPath = "<img src='./resources/flower-door.png'>";
-const ringDoorPath = "<img src='./resources/gift-door.png'>";
+//Door Paths [flashlight, vacuum, ghost]
+const ghostDoorPath = "<img src='./resources/ghost-door.png'>";
+const flowerDoorPath = "<img src='./resources/flash-door.png'>";
+const ringDoorPath = "<img src='./resources/hoover-door.png'>";
 const closedDoorPath = "<img src='./resources/shut-door.png'>";
 
 //Doors variables
@@ -22,8 +22,8 @@ const startButton = document.getElementById("start");
 let currentlyPlaying = true;
 //End Global Variables
 
-const isBot = (door) => {
-  if(door.src === girlDoorPath) {
+const isGhost = (door) => {
+  if(door.src === ghostDoorPath) {
     return true;
   } else {
     return false;
@@ -44,14 +44,14 @@ const playDoor = (door) => {
   numClosedDoors--;
   if(numClosedDoors===0) {
     gameOver('win');
-  } else if(isBot(door)) {
+  } else if(isGhost(door)) {
     gameOver();
   }
 };
 
 //Random Door Location Generator
-let randomChoreDoorGenerator = () => {
-  let theDoors = [girlDoorPath, ringDoorPath, flowerDoorPath];
+let randomFrightDoorGenerator = () => {
+  let theDoors = [ghostDoorPath, ringDoorPath, flowerDoorPath];
   function shuffle(array) {
     var m = array.length, t, i;
 
@@ -86,16 +86,16 @@ const startRound = () => {
   doorImage3.innerHTML = closedDoorPath;
   startButton.innerHTML = 'Good luck!'
   currentlyPlaying = true;
-  startButton.style.backgroundColor = '#ff7c7c'
-  randomChoreDoorGenerator();
+  startButton.style.backgroundColor = 'darkorange'
+  randomFrightDoorGenerator();
 }
 
 const gameOver = (status) => {
   if(status === "win") {
-    startButton.innerHTML = 'You win! <i class="fas fa-heart instructions-icon"></i> Play again?';
+    startButton.innerHTML = 'You win! <i class="fa-solid fa-face-smile-wink gameovericon"></i> Play again?';
     startButton.style.backgroundColor = 'green'
   } else {
-    startButton.innerHTML = 'Oh No! <i class="fas fa-heart-broken"></i> Play again?';
+    startButton.innerHTML = 'Oh No! <i class="fas fa-skull gameovericon"></i> Play again?';
     startButton.style.backgroundColor = 'red'
   }
   currentlyPlaying = false;

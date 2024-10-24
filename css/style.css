@@ -1,93 +1,110 @@
 html{
-  font-family: 'Tangerine';
+  font-family: 'Creepster';
   text-align: center
 }
 body {
-  background-color: #CD2626;
+  background-image: linear-gradient(grey, black);
   margin: 0px;
 }
 tr {
   display: flex;
   align-items: center;
+  margin: 30px 0px
 }
 .header{
-  background-color: #ff7c7c;
-  font-size: 30px;
-  color: #CD2626;
+  background-color: darkorange;
+  font-size: 50px;
+  color: #000;
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header h1 {
-  font-size: 60px;
+  font-size: 100px;
   display: inline;
   margin: 0 10px 0 5px;
 }
 .fas {
-  color: #fff;
-  margin-left: 5px;
+  color: FFF;
+  margin-right: 5px;
   padding: auto 0;
 }
+
+.gameovericon {
+  color:#000;
+}
+
 .title-row {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  border-radius: 390px;
-  background-color: rgba(255, 205, 205, 0.6);
-  padding: 3rem 5rem;
-  margin: 3rem auto 3rem;
+  border-radius: 5px;
+  border: double 10px darkslategray;
+  background-color: rgb(112, 128, 144);
+  padding: 1rem 3rem;
+  margin: 3rem 3rem;
   box-shadow: 0px 7px 27px black;
+  
 }
 
 .instructions-title {
   display: inline;
-  font-family: 'Tangerine', cursive;
+  font-family: 'Creepster', cursive;
   text-decoration: underline;
-  font-size: 66px;
+  font-size: 40px;
+  color: darkslategray;
 }
 
 .instructions-row {
-  margin: 0 auto;
-  width: 400px;
+  display: flex;
 }
 
 .instructions-number {
-  padding: 0 25px;
-  font-size: 36px;
+  padding-right: 50px;
+  font-size: 16px;
   font-family: serif;
   vertical-align: baseline;
+  color: darkslategray
+
 }
 
 .instructions-text {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
-  padding: 10px;
-  font-size: 20px; 
+  padding: 5px;
+  font-size: 40px;
+  color: darkslategray;
 }
 
-.door-row{
+.door-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
+
 .door-frame {
   display: flex;
   cursor: pointer;
   padding: 10px;
   margin: 20px;
-  height: 227px;
-  width: 120px;
+  height: 360px;
+  width: 230px;
 }
 .start-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin: 10px auto 21px auto;
-  width: 120px;
-  height: 43px;
-  background-color: #ffcdcd;
-  font-family: sans-serif;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  background-color: darkorange;
+  font-family: 'creepster';
   font-weight: 300;
-  font-size: 18px;
-  color: #fff;
+  font-size: 40px;
+  color: black;
   cursor: pointer;
   border-radius: 10px;
   border: 2px solid #fff;
@@ -101,8 +118,8 @@ tr {
 button {
   display: flex;
   background-color: transparent;
-  border: 1px solid #CD2626 ;
 }
+
 button img {
   width: 100%;
   height: 100%;
