@@ -4,8 +4,11 @@ html{
 }
 body {
   background-image: linear-gradient(grey, black);
-  margin: 0px;
+  height: 100%;
+  display: flex column;
+  align-items: center;
 }
+
 tr {
   display: flex;
   align-items: center;
@@ -38,7 +41,6 @@ tr {
 .title-row {
   display: flex;
   flex-direction: column;
-  width: fit-content;
   border-radius: 5px;
   border: double 10px darkslategray;
   background-color: rgb(112, 128, 144);
@@ -70,17 +72,25 @@ tr {
 }
 
 .instructions-text {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
   padding: 5px;
   font-size: 40px;
   color: darkslategray;
 }
 
+.content-container {
+  max-width: 1000px;
+  display: flex column;
+  justify-content: center;
+  margin: auto auto;
+}
+
 .door-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 0 30px;
 }
 
 .door-frame {
@@ -88,7 +98,7 @@ tr {
   cursor: pointer;
   padding: 10px;
   margin: 20px;
-  height: 360px;
+  height: 420px;
   width: 230px;
 }
 .start-row {
@@ -127,38 +137,31 @@ button img {
 
 #showButton {
   display: none;
+  margin: 20px auto;
+  color: darkslategray;
+  font-family: "Creepster";
+  border-radius: 5px;
+  border: double 10px darkslategray;
+  background-color: rgb(112, 128, 144);
+  padding: 10px;
+  font-size: 40px;
 }
 
-@media (max-width: 430px) {
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .title-row {
-    margin: 5rem 2rem 21px 2rem;
+#showButton:hover {
+  background-color: rgb(80, 92, 104);;
+}
 
-  }
-  .instructions-title {
-    font-size: 5rem;
-  }
-
+/*@media screen and (max-width: 420px) {
   .instructions-text {
-    font-size: 40px;
+    font-size: 20px;
   }
 
-  .door-row {
-    margin-top: 10rem;
+  tr {
+    margin: 10px;
   }
 
-  .door-frame {
-    height: 20rem;
+  .content-container {
+    margin-top: 500px
   }
-
-  .start-row {
-    height: 6rem;
-    width: 14rem;
-  }
-
 }
+  */

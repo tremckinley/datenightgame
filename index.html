@@ -10,43 +10,47 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
 
-  <body>
+  
     <header class="header">
       <i class="fas fa-ghost"></i><h1>Fright Night!</h1><i class="fas fa-ghost"></i>
     </header>
-    <div class="title-row">
-      <!--Instructions Title-->
-      <!--<i class="fas fa-heart instructions-icon"></i>-->
-      <div style="display: flex; justify-content: center; align-items: center;"><p class="instructions-title">Instructions</p> <button style="margin-left:20px;">Hide</button></div>
-      <!--<i class="fas fa-heart instructions-icon"></i>-->
-      <!--Instructions Table-->
-      <table class="instructions-row">
-          <tr> 
-            <td class="instructions-number"><i class="fa fa-skull"></i></td> 
-            <td class="instructions-text">You just remembered it's your anniversary and you ordered her gifts last minute!</td> 
-          </tr>
-  
-          <tr> 
-            <td class="instructions-number"><i class="fa fa-skull"></i></td> 
-            <td class="instructions-text">To save your night, make sure you answer the door for the flowers & the gift BEFORE your date shows up.</td> 
-          </tr>
-  
-          <tr> 
-            <td class="instructions-number"><i class="fa fa-skull"></i></td> 
-            <td class="instructions-text">If you manage to avoid your date until the last door, the night is saved!</td> 
-          </tr>
-  
-        </table>
-         <!--End Instructions Table-->  
+    <body>
+    <button id="showButton">Show Instructions</button>
+    <div class="content-container">
+      <div class="title-row" id="instructionBar">
+        <!--Instructions Title-->
+        <!--<i class="fas fa-heart instructions-icon"></i>-->
+        <div style="display: flex; justify-content: center; align-items: center;"><p class="instructions-title">Instructions</p> <button style="margin-left:20px;" id="hideButton">Hide</button></div>
+        <!--<i class="fas fa-heart instructions-icon"></i>-->
+        <!--Instructions Table-->
+        <table class="instructions-row">
+            <tr> 
+              <td class="instructions-number"><i class="fa fa-skull"></i></td> 
+              <td class="instructions-text">You just remembered it's your anniversary and you ordered her gifts last minute!</td> 
+            </tr>
+    
+            <tr> 
+              <td class="instructions-number"><i class="fa fa-skull"></i></td> 
+              <td class="instructions-text">To save your night, make sure you answer the door for the flowers & the gift BEFORE your date shows up.</td> 
+            </tr>
+    
+            <tr> 
+              <td class="instructions-number"><i class="fa fa-skull"></i></td> 
+              <td class="instructions-text">If you manage to avoid your date until the last door, the night is saved!</td> 
+            </tr>
+    
+          </table>
+           <!--End Instructions Table-->  
+      </div>
+      <!--Doors-->
+      <div class="door-row">
+        <button id="door1" class="door-frame"><img src='./resources/shut-door.png'></button>
+        <button id="door2" class="door-frame"><img src='./resources/shut-door.png'></button>
+        <button id="door3" class="door-frame"><img src='./resources/shut-door.png'></button>
+      </div>
+      <!--Button-->
+      <button id="start" class="start-row">Good luck!</button>
     </div>
-    <!--Doors-->
-    <div class="door-row">
-      <button id="door1" class="door-frame"><img src='./resources/shut-door.png'></button>
-      <button id="door2" class="door-frame"><img src='./resources/shut-door.png'></button>
-      <button id="door3" class="door-frame"><img src='./resources/shut-door.png'></button>
-    </div>
-    <!--Button-->
-    <button id="start" class="start-row">Good luck!</button>
 
 
 
