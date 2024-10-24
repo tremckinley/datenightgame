@@ -9,6 +9,7 @@ const ghostDoorPath = "<img src='./resources/ghost-door.png'>";
 const flowerDoorPath = "<img src='./resources/flash-door.png'>";
 const ringDoorPath = "<img src='./resources/hoover-door.png'>";
 const closedDoorPath = "<img src='./resources/shut-door.png'>";
+const winDoorPath = "<img src='./resources/win-ghost-door.png'>";
 
 //Doors variables
 let numClosedDoors = 3;
@@ -57,6 +58,8 @@ const isClicked = (door) => {
 const playDoor = (door) => {
   numClosedDoors--;
   if(numClosedDoors===0) {
+    door.innerHTML = winDoorPath;
+    document.body.style.backgroundImage = "linear-gradient(yellow, orange)"
     gameOver('win');
   } else if(isGhost(door)) {
     gameOver();
@@ -101,6 +104,7 @@ const startRound = () => {
   startButton.innerHTML = 'Good luck!'
   currentlyPlaying = true;
   startButton.style.backgroundColor = 'darkorange'
+  document.body.style.backgroundImage = "linear-gradient(grey, black)"
   randomFrightDoorGenerator();
 }
 
@@ -118,7 +122,7 @@ const gameOver = (status) => {
 //Door Click Functions
 doorImage1.onclick = () => {
   if(currentlyPlaying && (isClicked(doorImage1)===false)) {
-    doorImage1.src = openDoor1
+    doorImage1.src = openDoor1 
     doorImage1.innerHTML = doorImage1.src
     playDoor(doorImage1);
   }
