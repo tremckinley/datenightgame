@@ -16,6 +16,20 @@ let openDoor1 = '';
 let openDoor2 = '';
 let openDoor3 = '';
 
+//menu button functionality
+let hideButton = document.getElementById("hideButton");
+let instructionBar = document.getElementById("instructionBar");
+let showButton = document.getElementById('showButton');
+
+hideButton.onclick = () => {
+  instructionBar.style.display = "none";
+  showButton.style.display = "flex";
+} 
+
+showButton.onclick = () => {
+  instructionBar.style.display = "flex";
+  showButton.style.display = "none";
+}
 
 const startButton = document.getElementById("start");
 
