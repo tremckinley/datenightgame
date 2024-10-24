@@ -111,7 +111,7 @@ const startRound = () => {
 const gameOver = (status) => {
   if(status === "win") {
     startButton.innerHTML = 'You win! <i class="fa-solid fa-face-smile-wink gameovericon"></i> Play again?';
-    startButton.style.backgroundColor = 'green'
+    startButton.style.backgroundColor = 'deepskyblue'
   } else {
     startButton.innerHTML = 'Oh No! <i class="fas fa-skull gameovericon"></i> Play again?';
     startButton.style.backgroundColor = 'red'
